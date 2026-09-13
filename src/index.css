@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --color-st-primary: #f7b900;
+  --color-st-primary-hover: #e0a700;
+  --color-st-dark: #0b1120;
+  --color-st-dark-card: #101828;
+  --color-st-dark-light: #1e293b;
+  --color-st-text: #94a3b8;
+  --color-st-heading: #ffffff;
+
+  --shadow-gold-glow: 0 4px 20px rgba(247, 185, 0, 0.25);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  body {
+    background-color: #070b15;
+    color: var(--color-st-text);
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #070b15;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f7b900;
+}
+
+/* Watermark Subtitle Effect */
+.st-watermark {
+  @apply absolute left-1/2 -translate-x-1/2 -top-6 text-6xl md:text-8xl font-black uppercase text-white/[0.03] tracking-widest pointer-events-none select-none whitespace-nowrap;
+}
+
+/* Section Title Style */
+.st-section-title {
+  @apply relative text-3xl md:text-4xl font-bold text-white uppercase tracking-wider text-center z-10;
+}
+
+.st-section-subtitle {
+  @apply text-st-primary font-medium tracking-widest text-sm uppercase text-center mb-2 z-10 relative;
+}
+
+/* Button Component */
+.st-btn-primary {
+  @apply inline-flex items-center justify-center px-8 py-3.5 rounded-full text-black font-semibold bg-st-primary hover:bg-st-primary-hover transition-all duration-300 transform hover:-translate-y-1 shadow-gold-glow cursor-pointer;
+}
+
+.st-btn-outline {
+  @apply inline-flex items-center justify-center px-8 py-3.5 rounded-full text-st-primary font-semibold border-2 border-st-primary hover:bg-st-primary hover:text-black transition-all duration-300 cursor-pointer;
+}
+
+/* Swiper / Carousel Customization */
+.swiper-pagination-bullet {
+  background: #ffffff !important;
+  opacity: 0.3 !important;
+}
+.swiper-pagination-bullet-active {
+  background: #f7b900 !important;
+  opacity: 1 !important;
+  width: 24px !important;
+  border-radius: 4px !important;
+}
