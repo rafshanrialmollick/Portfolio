@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { heroData } from '../../data/portfolioData';
+import React from "react";
+import { motion } from "framer-motion";
+import { heroData } from "../../data/portfolioData";
 
 export default function Hero() {
   return (
@@ -14,7 +14,6 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
           {/* Left Text Column */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
             <motion.h3
@@ -30,11 +29,11 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight leading-tight uppercase"
+              className=" fo  text-5xl sm:text-6xl md:text-7xl  text-white   uppercase"
             >
-              {heroData.name.split(' ')[0]} <br />
+              {heroData.name.split(" ")[0]} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-st-primary">
-                {heroData.name.split(' ')[1]}
+                {heroData.name.split(" ")[1]}
               </span>
             </motion.h1>
 
@@ -81,7 +80,7 @@ export default function Hero() {
             >
               {/* Background Glow Ring */}
               <div className="absolute -inset-4 bg-st-primary/20 rounded-full blur-3xl -z-10 animate-pulse" />
-              
+
               <div className="relative rounded-2xl overflow-hidden border-2 border-st-primary/30 bg-st-dark-card shadow-2xl">
                 <img
                   src={heroData.heroImage}
@@ -107,7 +106,6 @@ export default function Hero() {
               </div>
             </motion.div>
           </div>
-
         </div>
       </div>
     </section>
