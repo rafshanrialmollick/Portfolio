@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X, ExternalLink, Calendar, User, Tag } from 'lucide-react';
+import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { X, ExternalLink, Calendar, User, Tag } from "lucide-react";
 
 export default function PortfolioModal({ project, onClose }) {
   if (!project) return null;
@@ -50,7 +50,9 @@ export default function PortfolioModal({ project, onClose }) {
               <div className="flex items-center gap-2 text-slate-300">
                 <User className="w-4 h-4 text-st-primary" />
                 <div>
-                  <p className="text-slate-500 text-[10px] uppercase font-semibold">Client / Org</p>
+                  <p className="text-slate-500 text-[10px] uppercase font-semibold">
+                    Client / Org
+                  </p>
                   <p className="font-semibold text-white">{project.client}</p>
                 </div>
               </div>
@@ -58,7 +60,9 @@ export default function PortfolioModal({ project, onClose }) {
               <div className="flex items-center gap-2 text-slate-300">
                 <Calendar className="w-4 h-4 text-st-primary" />
                 <div>
-                  <p className="text-slate-500 text-[10px] uppercase font-semibold">Date</p>
+                  <p className="text-slate-500 text-[10px] uppercase font-semibold">
+                    Date
+                  </p>
                   <p className="font-semibold text-white">{project.date}</p>
                 </div>
               </div>
@@ -66,8 +70,12 @@ export default function PortfolioModal({ project, onClose }) {
               <div className="flex items-center gap-2 text-slate-300 col-span-2 sm:col-span-1">
                 <Tag className="w-4 h-4 text-st-primary" />
                 <div>
-                  <p className="text-slate-500 text-[10px] uppercase font-semibold">Tech Stack</p>
-                  <p className="font-semibold text-white">{project.subCategory}</p>
+                  <p className="text-slate-500 text-[10px] uppercase font-semibold">
+                    Tech Stack
+                  </p>
+                  <p className="font-semibold text-white">
+                    {project.subCategory}
+                  </p>
                 </div>
               </div>
             </div>

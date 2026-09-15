@@ -6,7 +6,7 @@ const navItems = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Service", href: "#service" },
-  { label: 'Skills', href: '#skills' },
+  { label: "Skills", href: "#skills" },
   { label: "Resume", href: "#resume" },
   { label: "Portfolio", href: "#portfolio" },
   { label: "Blog", href: "#blog" },
@@ -89,7 +89,6 @@ export default function Header() {
               <Phone className="w-4 h-4" />
             </div>
             <div className="text-xs">
-              <p className="text-slate-400 font-light">Call Me</p>
               <a
                 href={`tel:${heroData.phone}`}
                 className="text-white font-semibold hover:text-st-primary transition"

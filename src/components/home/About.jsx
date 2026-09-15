@@ -1,20 +1,22 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Download } from 'lucide-react';
-import { aboutData } from '../../data/portfolioData';
-import SectionHeading from '../common/SectionHeading';
+import React from "react";
+import { motion } from "framer-motion";
+import { Download } from "lucide-react";
+import { aboutData } from "../../data/portfolioData";
+import SectionHeading from "../common/SectionHeading";
 
 export default function About() {
   return (
     <section id="about" className="relative py-24 bg-[#090d1a] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
         {/* Section Heading */}
-        <SectionHeading watermark="About Me" subtitle="About Me" title="About Me" />
+        <SectionHeading
+          watermark="About Me"
+          subtitle="About Me"
+          title="About Me"
+        />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          {/* Left Column Image */}
+          {/* Left Column  */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -34,7 +36,7 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* Right Column Details */}
+          {/* Right Column  */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -56,7 +58,9 @@ export default function About() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 py-4 border-y border-white/10 text-sm">
               {aboutData.details.map((info, id) => (
                 <div key={id} className="flex items-center gap-2">
-                  <span className="font-semibold text-white min-w-[90px]">{info.label} :</span>
+                  <span className="font-semibold text-white min-w-[90px]">
+                    {info.label} :
+                  </span>
                   <span className="text-slate-300">{info.value}</span>
                 </div>
               ))}
@@ -64,15 +68,17 @@ export default function About() {
 
             {/*  Button */}
             <div className="pt-2">
-              <a href={aboutData.cvLink} download className="st-btn-primary gap-2">
+              <a
+                href={aboutData.cvLink}
+                download
+                className="st-btn-primary gap-2"
+              >
                 <Download className="w-4 h-4" />
                 Download CV
               </a>
             </div>
           </motion.div>
-
         </div>
-
       </div>
     </section>
   );
