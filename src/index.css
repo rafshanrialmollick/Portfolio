@@ -13,24 +13,34 @@
 }
 
 @layer base {
-  html {
+  html, body {
     scroll-behavior: smooth;
+    max-width: 100vw;
+    overflow-x: hidden !important;
     font-family:
       "Inter",
       system-ui,
       -apple-system,
       sans-serif;
   }
+
   .fo {
     font-family: "Caacupe One", sans-serif;
     font-weight: 400;
     font-style: normal;
   }
 
+  /* Default Dark Theme */
   body {
     background-color: #070b15;
-    color: var(--color-st-text);
-    overflow-x: hidden;
+    color: #94a3b8;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Light Theme Overrides */
+  html.light body {
+    background-color: #f8fafc;
+    color: #475569;
   }
 }
 
@@ -41,9 +51,15 @@
 ::-webkit-scrollbar-track {
   background: #070b15;
 }
+html.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
 ::-webkit-scrollbar-thumb {
   background: #1e293b;
   border-radius: 4px;
+}
+html.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #f7b900;
@@ -51,25 +67,33 @@
 
 /* Watermark Subtitle Effect */
 .st-watermark {
-  @apply absolute left-1/2 -translate-x-1/2 -top-6 text-6xl md:text-8xl font-black uppercase text-white/[0.03] tracking-widest pointer-events-none select-none whitespace-nowrap;
+  @apply absolute left-1/2 -translate-x-1/2 -top-4 sm:-top-6 text-4xl sm:text-6xl md:text-8xl font-black uppercase text-white/[0.03] tracking-widest pointer-events-none select-none whitespace-nowrap max-w-full overflow-hidden;
+}
+
+html.light .st-watermark {
+  @apply text-slate-900/[0.04];
 }
 
 /* Section Title Style */
 .st-section-title {
-  @apply relative text-3xl md:text-4xl font-bold text-white uppercase tracking-wider text-center z-10;
+  @apply relative text-2xl sm:text-3xl md:text-4xl font-bold text-white uppercase tracking-wider text-center z-10;
+}
+
+html.light .st-section-title {
+  @apply text-slate-900;
 }
 
 .st-section-subtitle {
-  @apply text-st-primary font-medium tracking-widest text-sm uppercase text-center mb-2 z-10 relative;
+  @apply text-st-primary font-semibold tracking-widest text-xs sm:text-sm uppercase text-center mb-2 z-10 relative;
 }
 
 /* Button Component */
 .st-btn-primary {
-  @apply inline-flex items-center justify-center px-5 py-2 md:py-3.5 md:px-8   rounded-full text-black font-semibold bg-st-primary hover:bg-st-primary-hover transition-all duration-300 transform hover:-translate-y-1 shadow-gold-glow cursor-pointer;
+  @apply inline-flex items-center justify-center px-5 py-2.5 md:py-3.5 md:px-8 rounded-full text-slate-950 font-bold bg-st-primary hover:bg-st-primary-hover transition-all duration-300 transform hover:-translate-y-1 shadow-gold-glow cursor-pointer select-none active:scale-95;
 }
 
 .st-btn-outline {
-  @apply inline-flex items-center justify-center px-5 py-2 md:py-3.5 md:px-8 rounded-full text-st-primary font-semibold border-2 border-st-primary hover:bg-st-primary hover:text-black transition-all duration-300 cursor-pointer;
+  @apply inline-flex items-center justify-center px-5 py-2.5 md:py-3.5 md:px-8 rounded-full text-st-primary font-bold border-2 border-st-primary hover:bg-st-primary hover:text-slate-950 transition-all duration-300 cursor-pointer select-none active:scale-95;
 }
 
 /* Swiper / Carousel Customization */
@@ -77,9 +101,56 @@
   background: #ffffff !important;
   opacity: 0.3 !important;
 }
+html.light .swiper-pagination-bullet {
+  background: #0f172a !important;
+  opacity: 0.2 !important;
+}
 .swiper-pagination-bullet-active {
   background: #f7b900 !important;
   opacity: 1 !important;
   width: 24px !important;
   border-radius: 4px !important;
+}
+
+/* Theme Adaptive Utility Classes */
+.theme-bg-main {
+  @apply bg-[#070b15] transition-colors duration-300;
+}
+html.light .theme-bg-main {
+  @apply bg-slate-50;
+}
+
+.theme-bg-sec {
+  @apply bg-[#090d1a] transition-colors duration-300;
+}
+html.light .theme-bg-sec {
+  @apply bg-white;
+}
+
+.theme-card {
+  @apply bg-[#0e1526] border-white/5 transition-colors duration-300;
+}
+html.light .theme-card {
+  @apply bg-white border-slate-200/80 shadow-md shadow-slate-200/50;
+}
+
+.theme-text-heading {
+  @apply text-white transition-colors duration-300;
+}
+html.light .theme-text-heading {
+  @apply text-slate-900;
+}
+
+.theme-text-body {
+  @apply text-slate-300 transition-colors duration-300;
+}
+html.light .theme-text-body {
+  @apply text-slate-600;
+}
+
+.theme-input {
+  @apply bg-[#0e1526] border-white/10 text-white placeholder-slate-500 focus:border-st-primary transition-all duration-200;
+}
+html.light .theme-input {
+  @apply bg-slate-100 border-slate-300 text-slate-900 placeholder-slate-400 focus:border-st-primary focus:bg-white;
 }

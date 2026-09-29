@@ -1,3 +1,4 @@
+import React from "react";
 import CustomCursor from "../components/common/CustomCursor";
 import Footer from "../components/common/Footer";
 import Hero from "../components/home/Hero";
@@ -10,18 +11,21 @@ import Reviews from "../components/home/Reviews";
 import Blog from "../components/home/Blog";
 import Contact from "../components/home/Contact";
 import Header from "../components/common/Header";
+import { useTheme } from "../context/ThemeContext";
 
 export default function Home() {
+  const { isDark } = useTheme();
+
   return (
-    <div className="relative min-h-screen bg-[#070b15] text-slate-200">
+    <div className={`relative min-h-screen max-w-full overflow-x-hidden ${isDark ? "bg-[#070b15] text-slate-200" : "bg-slate-50 text-slate-800"}`}>
       {/* Animated Cursor */}
       <CustomCursor />
 
       {/* Header */}
       <Header />
 
-      {/* Homepage*/}
-      <main>
+      {/* Homepage Content */}
+      <main className="max-w-full overflow-x-hidden">
         <Hero />
         <About />
         <Services />
