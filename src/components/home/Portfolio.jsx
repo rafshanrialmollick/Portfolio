@@ -1,19 +1,25 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { portfolioData } from '../../data/portfolioData';
-import SectionHeading from '../common/SectionHeading';
-import PortfolioModal from '../common/PortfolioModal';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { portfolioData } from "../../data/portfolioData";
+import SectionHeading from "../common/SectionHeading";
+import PortfolioModal from "../common/PortfolioModal";
 
 export default function Portfolio() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [visibleCount, setVisibleCount] = useState(6);
 
   return (
-    <section id="portfolio" className="relative py-24 bg-[#090d1a] overflow-hidden">
+    <section
+      id="portfolio"
+      className="relative py-24 bg-[#090d1a] overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-
         {/* Section Heading */}
-        <SectionHeading watermark="Portfolio" subtitle="Portfolio" title="Featured Projects" />
+        <SectionHeading
+          watermark="Portfolio"
+          subtitle="Portfolio"
+          title="Featured Projects"
+        />
 
         {/* Portfolio Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -34,7 +40,7 @@ export default function Portfolio() {
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                
+
                 {/* Gradient Mask */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#070b15] via-[#070b15]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                   <span className="text-st-primary text-xs font-semibold uppercase tracking-wider mb-1">
@@ -63,7 +69,6 @@ export default function Portfolio() {
             </button>
           </div>
         )}
-
       </div>
 
       {/* Lightbox Detail Modal */}

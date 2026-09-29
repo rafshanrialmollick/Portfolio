@@ -5,7 +5,7 @@ import SectionHeading from '../common/SectionHeading';
 
 export default function Services() {
   return (
-    <section id="service" className="relative py-24 bg-[#070b15] overflow-hidden">
+    <section id="service" className="relative py-10 md:py-24 bg-[#070b15] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Heading */}

@@ -11,7 +11,8 @@ export const heroData = {
     { name: "GitHub", url: "https://github.com/rafshanrialmollick" },
     { name: "LinkedIn", url: "https://linkedin.com" },
     { name: "Twitter", url: "https://twitter.com" },
-    { name: "Dev.to", url: "https://dev.to" },
+    // { name: "Dev.to", url: "https://dev.to" },
+    { name: "devto", url: "https://dev.to/yourusername" },
   ],
 };
 
@@ -21,12 +22,12 @@ export const aboutData = {
   bio: "I am a passionate Full Stack Web Developer specializing in the MERN Stack (MongoDB, Express.js, React, Node.js). I craft responsive, high-performance web applications with seamless user interfaces, clean modular code, and robust RESTful API backends.",
   image: "/images/section/about.jpg",
   details: [
-    { label: "Birthday", value: "Sep 01, 2006" },
     { label: "Phone", value: "+8801955297619" },
     { label: "Email", value: "rafshanrialmollick@gmail.com" },
     { label: "Location", value: "khulna, Bangladesh" },
     { label: "Stack", value: "MongoDB, Express, React, Node" },
     { label: "Freelance", value: "Available for Hire" },
+    { label: "Experience", value: "3 years" },
   ],
   cvLink: "/images/Resume.pdf",
 };
@@ -98,7 +99,7 @@ export const resumeData = {
     items: [
       {
         title: "Master of Science in Computer Science",
-        duration: "2018 - 2020",
+        duration: "2022 - 2024",
         institution: "Govt BL collage Khulna",
         description:
           "Specialized in Software Engineering, Advanced Web Architecture, and Distributed Database Systems.",
@@ -112,7 +113,7 @@ export const resumeData = {
       },
       {
         title: "Full Stack Web Development Bootcamp",
-        duration: "2018",
+        duration: "2024",
         institution: "FullStack Academy",
         description:
           "Intensive 6-month hands-on certification focusing on modern MERN stack development and agile team projects.",
@@ -125,21 +126,21 @@ export const resumeData = {
     items: [
       {
         title: "Junior MERN Stack Developer",
-        duration: "2022 - Present",
+        duration: "2024 - Present",
         institution: "Apex Digital Solutions",
         description:
           "Leading frontend & backend development for high-traffic SaaS applications using React, Node.js, and MongoDB.",
       },
       {
         title: "Full Stack Web Engineer",
-        duration: "2020 - 2022",
+        duration: "2024 - 2026",
         institution: "Nexus Innovations",
         description:
           "Engineered scalable REST APIs, stateful React dashboards, JWT authentication, and MongoDB database clusters.",
       },
       {
         title: "Frontend React Developer",
-        duration: "2018 - 2020",
+        duration: "2024 - 2026",
         institution: "WebCraft Studio",
         description:
           "Developed responsive UI components, integrated third-party APIs, and optimized page speed performance.",

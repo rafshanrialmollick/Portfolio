@@ -1,12 +1,20 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { heroData } from "../../data/portfolioData";
+import { FaGithub, FaLinkedin, FaTwitter, FaDev } from "react-icons/fa";
+
+const socialIcons = {
+  github: FaGithub,
+  linkedin: FaLinkedin,
+  twitter: FaTwitter,
+  devto: FaDev,
+};
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden bg-cover bg-center"
+      className="relative min-h-screen flex items-center justify-center pt-20 pb-3  md:pt-24 md:pb-16 overflow-hidden bg-cover bg-center"
       style={{ backgroundImage: `url(${heroData.backgroundImage})` }}
     >
       {/* Dark Gradient Overlay */}
@@ -15,7 +23,7 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Text Column */}
-          <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div className="lg:col-span-7  space-y-4 md:space-y-6 px-3  md:text-center lg:text-left">
             <motion.h3
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -61,7 +69,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="pt-4 flex flex-wrap gap-4 justify-center lg:justify-start"
             >
-              <a href="#contact" className="st-btn-primary">
+              <a href="#contact" className="st-btn-primary   ">
                 Hire Me
               </a>
               <a href="#portfolio" className="st-btn-outline">
@@ -85,24 +93,27 @@ export default function Hero() {
                 <img
                   src={heroData.heroImage}
                   alt={heroData.name}
-                  className="w-full h-[450px] object-cover object-top hover:scale-105 transition-transform duration-500"
+                  className="w-full md:h-[450px]  h-[380px] object-cover object-top hover:scale-105 transition-transform duration-500"
                 />
               </div>
 
               {/* Floating Social Sidebar */}
               <div className="absolute -left-6 bottom-8 hidden sm:flex flex-col gap-3 bg-[#0d1424]/90 backdrop-blur-md p-3 rounded-2xl border border-white/10 shadow-xl">
-                {heroData.socials.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-10 h-10 rounded-xl bg-st-dark-light hover:bg-st-primary hover:text-black text-slate-300 flex items-center justify-center font-bold text-xs transition duration-300"
-                    title={social.name}
-                  >
-                    {social.name.substring(0, 2)}
-                  </a>
-                ))}
+                {heroData.socials.map((social) => {
+                  const Icon = socialIcons[social.name.toLowerCase()];
+                  return (
+                    <a
+                      key={social.name}
+                      href={social.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="w-10 h-10 rounded-xl bg-st-dark-light hover:bg-st-primary hover:text-black text-slate-300 flex items-center justify-center transition duration-300"
+                      title={social.name}
+                    >
+                      {Icon ? <Icon size={18} /> : social.name.substring(0, 2)}
+                    </a>
+                  );
+                })}
               </div>
             </motion.div>
           </div>

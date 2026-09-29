@@ -7,7 +7,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative py-24 bg-[#090d1a] overflow-hidden"
+      className="relative py-10  md:py-24 bg-[#090d1a] overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Heading */}

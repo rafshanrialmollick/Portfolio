@@ -65,11 +65,11 @@
 
 /* Button Component */
 .st-btn-primary {
-  @apply inline-flex items-center justify-center px-8 py-3.5 rounded-full text-black font-semibold bg-st-primary hover:bg-st-primary-hover transition-all duration-300 transform hover:-translate-y-1 shadow-gold-glow cursor-pointer;
+  @apply inline-flex items-center justify-center px-5 py-2 md:py-3.5 md:px-8   rounded-full text-black font-semibold bg-st-primary hover:bg-st-primary-hover transition-all duration-300 transform hover:-translate-y-1 shadow-gold-glow cursor-pointer;
 }
 
 .st-btn-outline {
-  @apply inline-flex items-center justify-center px-8 py-3.5 rounded-full text-st-primary font-semibold border-2 border-st-primary hover:bg-st-primary hover:text-black transition-all duration-300 cursor-pointer;
+  @apply inline-flex items-center justify-center px-5 py-2 md:py-3.5 md:px-8 rounded-full text-st-primary font-semibold border-2 border-st-primary hover:bg-st-primary hover:text-black transition-all duration-300 cursor-pointer;
 }
 
 /* Swiper / Carousel Customization */

@@ -5,11 +5,11 @@ import { heroData } from "../../data/portfolioData";
 const navItems = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
-  { label: "Service", href: "#service" },
-  { label: "Skills", href: "#skills" },
-  { label: "Resume", href: "#resume" },
+  { label: "Services", href: "#service" },
+  // { label: "Skills", href: "#skills" },
+  // { label: "Resume", href: "#resume" },
   { label: "Portfolio", href: "#portfolio" },
-  { label: "Blog", href: "#blog" },
+  { label: "Blogs", href: "#blog" },
   { label: "Contact", href: "#contact" },
 ];
 
